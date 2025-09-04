@@ -21,6 +21,13 @@
     font-size:2.2rem;
   }
 
+  .h2 { 
+    text-align:center;
+    padding: 20px; 
+    margin-bottom: 20px; 
+    font-size:5rem;
+  }
+
   .list { 
     display: flex; 
     flex-direction: column; 
@@ -86,26 +93,27 @@
 
 <h1>Trolldier Rankings </h1>
 
+<h2> THIS WEBSITE IS UNDER CONSTRUCTIONS SO THINGS WIL CHANGE</h2>
+
 <div class="list" id="playerList"></div>
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
  const players = [
-  { name: "math enjoyer", profile: "https://steamcommunity.com/id/noninvertible/", spoonKills: 16000, jumpTier: 5 /*, votes: 7, hoursPlayed: 5000 */ },
+  { name: "math enjoyer", profile: "https://steamcommunity.com/id/noninvertible/", spoonKills: 16000, jumpTier: 5, votes: 1, hoursPlayed: 3900  },
   { name: "possum", profile: "https://steamcommunity.com/id/lockedpossum/", spoonKills: 12000, jumpTier: 3 /*, votes: 6, hoursPlayed: 2500 */ },
   { name: "just a gamer", profile: "https://steamcommunity.com/profiles/76561199520681649/", spoonKills: 2000, jumpTier: 3 /*, votes: 5, hoursPlayed: 1200 */ },
   { name: "Habibi", profile: "https://steamcommunity.com/id/30925716136956716/", spoonKills: 4000, jumpTier: 4 /*, votes: 4, hoursPlayed: 1800 */ },
-  { name: "zin", profile: "https://steamcommunity.com/profiles/76561199276635228/", spoonKills: 8300, jumpTier: 4 /*, votes: 5, hoursPlayed: 2200 */ }
+  { name: "zin", profile: "https://steamcommunity.com/profiles/76561199276635228/", spoonKills: 8300, jumpTier: 4 /*, votes: 5, */ ,hoursPlayed: 1000  },
+  { name: "KRAACK", profile: "https://steamcommunity.com/profiles/76561198093232307", spoonKills: 29000, jumpTier: 4, votes: 3, hoursPlayed: 8000 }
 ];
 
-  // jumpTier = 40%, spoonKills = 30%, votes (1-7) = 20%, hoursPlayed = 10%
+  // jumpTier = 40%, spoonKills = 30%, , hoursPlayed = 10%
   players.forEach(p => {
     const t = p.jumpTier;
     const k = p.spoonKills;
-    const v = p.votes || 1;
-    const h = p.hoursPlayed || 0;
 
-    p.skill = ((0.4 * t / 5) + (0.3 * k / 30000) + (0.2 * v / 7) + (0.1 * h / 10000)) * 100;
+    p.skill = ((0.4 * t / 5) + (0.6 * k / 30000)) * 100;
     p.skill = Math.round(p.skill);
   });
 
