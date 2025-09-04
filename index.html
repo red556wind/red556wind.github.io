@@ -26,6 +26,7 @@
     padding: 20px; 
     margin-bottom: 20px; 
     font-size:5rem;
+    text-align:center;
   }
 
   .list { 
@@ -93,7 +94,8 @@
 
 <h1>Trolldier Rankings </h1>
 
-<h2> THIS WEBSITE IS UNDER CONSTRUCTIONS SO THINGS WIL CHANGE</h2>
+
+
 
 <div class="list" id="playerList"></div>
 
@@ -105,10 +107,9 @@ document.addEventListener("DOMContentLoaded", function() {
   { name: "just a gamer", profile: "https://steamcommunity.com/profiles/76561199520681649/", spoonKills: 2000, jumpTier: 3 /*, votes: 5, hoursPlayed: 1200 */ },
   { name: "Habibi", profile: "https://steamcommunity.com/id/30925716136956716/", spoonKills: 4000, jumpTier: 4 /*, votes: 4, hoursPlayed: 1800 */ },
   { name: "zin", profile: "https://steamcommunity.com/profiles/76561199276635228/", spoonKills: 8300, jumpTier: 4 /*, votes: 5, */ ,hoursPlayed: 1000  },
-  { name: "KRAACK", profile: "https://steamcommunity.com/profiles/76561198093232307", spoonKills: 29000, jumpTier: 4, votes: 3, hoursPlayed: 8000 }
+  { name: "KRAACK", profile: "https://steamcommunity.com/profiles/76561198093232307", spoonKills: 29000, jumpTier: 4, votes: 3, hoursPlayed: 0 }
 ];
 
-  // jumpTier = 40%, spoonKills = 30%, , hoursPlayed = 10%
   players.forEach(p => {
     const t = p.jumpTier;
     const k = p.spoonKills;
@@ -117,7 +118,6 @@ document.addEventListener("DOMContentLoaded", function() {
     p.skill = Math.round(p.skill);
   });
 
-  // Sort players by skill descending
   players.sort((a,b)=>b.skill - a.skill);
 
   const list = document.getElementById('playerList');
