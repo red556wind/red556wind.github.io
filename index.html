@@ -2,14 +2,17 @@
 <html lang="en">
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TF2 Pro Trolldier Rankings</title>
+<title>Trolldier Rankings</title>
 <style>
   body { 
-    background: #0f0f0f; 
+    background-image: url("images.jpg"); 
     color: #e5e5e5; 
     font-family: 'Arial', sans-serif; 
     margin:0; 
     padding:20px; 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
   }
 
   h1 { 
@@ -81,24 +84,26 @@
 </head>
 <body>
 
-<h1>TF2 Pro Trolldier Rankings </h1>
+<h1>Trolldier Rankings </h1>
 
 <div class="list" id="playerList"></div>
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
   const players = [
-    { name: "math enjoyer", profile: "https://steamcommunity.com/id/noninvertible/", spoonKills: 16000, jumpTier: 5 },
-    { name: "possum", profile: "https://steamcommunity.com/id/lockedpossum/", spoonKills: 12000, jumpTier: 3 },
+    {name: "math enjoyer", profile: "https://steamcommunity.com/id/noninvertible/", spoonKills: 16000, jumpTier: 5 },
+    {name: "possum", profile: "https://steamcommunity.com/id/lockedpossum/", spoonKills: 12000, jumpTier: 3 },
     {name: "just a gamer", profile: "https://steamcommunity.com/profiles/76561199520681649/", "spoonKills": 2000, jumpTier: 3},
     {name: "Habibi", profile: "https://steamcommunity.com/id/30925716136956716/", spoonKills: 4000, jumpTier: 4},
+    {name: "zin", profile: "https://steamcommunity.com/profiles/76561199276635228/", spoonKills: 8300, jumpTier: 4},
+   // {name: "Dani", profile: "https://steamcommunity.com/id/danielmccann/", spoonKills: 150000, jumpTier: 5},
     
   ];
 
   players.forEach(p => {
     const t = p.jumpTier;
     const k = p.spoonKills;
-    p.skill = ((0.6 * t / 5) + (0.4 * k / 30000)) * 100;
+    p.skill = ((0.4 * t / 5) + (0.6 * k / 30000)) * 100;
     p.skill = Math.round(p.skill);
   });
 
