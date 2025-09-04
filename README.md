@@ -1,7 +1,6 @@
 # churchOfSpoons
 Almost all EU pro trolldiers wthis is just for jokes and fun, so don’t take it seriously.
-You can find the ranking at thelist.html, this gets updated sometime every week so if you want to stay updated you gotta download it again
-
+website link: https://red556wind.github.io/
 All users are manually added by me.
 
 
