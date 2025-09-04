@@ -90,23 +90,26 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-  const players = [
-    {name: "math enjoyer", profile: "https://steamcommunity.com/id/noninvertible/", spoonKills: 16000, jumpTier: 5 },
-    {name: "possum", profile: "https://steamcommunity.com/id/lockedpossum/", spoonKills: 12000, jumpTier: 3 },
-    {name: "just a gamer", profile: "https://steamcommunity.com/profiles/76561199520681649/", "spoonKills": 2000, jumpTier: 3},
-    {name: "Habibi", profile: "https://steamcommunity.com/id/30925716136956716/", spoonKills: 4000, jumpTier: 4},
-    {name: "zin", profile: "https://steamcommunity.com/profiles/76561199276635228/", spoonKills: 8300, jumpTier: 4},
-   // {name: "Dani", profile: "https://steamcommunity.com/id/danielmccann/", spoonKills: 150000, jumpTier: 5},
-    
-  ];
+ const players = [
+  { name: "math enjoyer", profile: "https://steamcommunity.com/id/noninvertible/", spoonKills: 16000, jumpTier: 5 /*, votes: 7, hoursPlayed: 5000 */ },
+  { name: "possum", profile: "https://steamcommunity.com/id/lockedpossum/", spoonKills: 12000, jumpTier: 3 /*, votes: 6, hoursPlayed: 2500 */ },
+  { name: "just a gamer", profile: "https://steamcommunity.com/profiles/76561199520681649/", spoonKills: 2000, jumpTier: 3 /*, votes: 5, hoursPlayed: 1200 */ },
+  { name: "Habibi", profile: "https://steamcommunity.com/id/30925716136956716/", spoonKills: 4000, jumpTier: 4 /*, votes: 4, hoursPlayed: 1800 */ },
+  { name: "zin", profile: "https://steamcommunity.com/profiles/76561199276635228/", spoonKills: 8300, jumpTier: 4 /*, votes: 5, hoursPlayed: 2200 */ }
+];
 
+  // jumpTier = 40%, spoonKills = 30%, votes (1-7) = 20%, hoursPlayed = 10%
   players.forEach(p => {
     const t = p.jumpTier;
     const k = p.spoonKills;
-    p.skill = ((0.4 * t / 5) + (0.6 * k / 30000)) * 100;
+    const v = p.votes || 1;
+    const h = p.hoursPlayed || 0;
+
+    p.skill = ((0.4 * t / 5) + (0.3 * k / 30000) + (0.2 * v / 7) + (0.1 * h / 10000)) * 100;
     p.skill = Math.round(p.skill);
   });
 
+  // Sort players by skill descending
   players.sort((a,b)=>b.skill - a.skill);
 
   const list = document.getElementById('playerList');
@@ -119,7 +122,9 @@ document.addEventListener("DOMContentLoaded", function() {
       <h2>${index+1}. ${p.name}</h2>
       <div class="info"> Spoon Kills: ${p.spoonKills}</div>
       <div class="info"> Jump Map Tier: ${p.jumpTier}</div>
-      <div class="info"> Overall Skill:</div>
+      <div class="info"> Community Votes: ${p.votes}</div>
+      <div class="info"> Hours Played: ${p.hoursPlayed}</div>
+      <div class="info"> Overall Score:</div>
       <div class="progress"><div class="progress-bar" style="width:${p.skill}%"></div></div>
       <div class="skill-text">${p.skill}/100</div>
     `;
