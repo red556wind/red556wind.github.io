@@ -132,10 +132,14 @@ document.addEventListener("DOMContentLoaded", function() {
   { name: "BbICTPEJL", profile: "https://steamcommunity.com/id/donttachme/", spoonKills: 10000, jumpTier: 4, votes: 3, hoursPlayed: 2900  },
   { name: "V1lka", profile: "https://steamcommunity.com/profiles/76561198905349981/", spoonKills: 3000, jumpTier: 3,  votes: 0, hoursPlayed: 1200  },
   { name: "Dombe", profile: "https://steamcommunity.com/profiles/76561198289424045/", spoonKills: 3500, jumpTier: 3,  votes: 0, hoursPlayed: 2700  },
+  { name: "voldemar", profile: "https://steamcommunity.com/profiles/76561199118642412", spoonKills: -999999, jumpTier: 0,  votes: 0, hoursPlayed: 0  },
   { name: "УФ АРТЁМ", profile: "https://steamcommunity.com/profiles/76561199118568588/", spoonKills: 55000, jumpTier: 4,  votes: 2, hoursPlayed: 3500  },
   { name: "shoveller gaming", profile: "https://steamcommunity.com/profiles/76561199240959332/", spoonKills: 7000, jumpTier: 3,  votes: 0, hoursPlayed: 2150 },
   { name: "zero", profile: "https://steamcommunity.com/profiles/76561198195303290/", spoonKills: 47000, jumpTier: 4,  votes: 0, hoursPlayed: 2700 },
-  { name: "oldy", profile: "https://steamcommunity.com/id/aliceold/", spoonKills: 2000, jumpTier: 2,  votes: 0, hoursPlayed: 9000 }
+  { name: "oldy", profile: "https://steamcommunity.com/id/aliceold/", spoonKills: 2000, jumpTier: 2,  votes: 0, hoursPlayed: 9000 },
+  { name: "muistio", profile: "https://steamcommunity.com/id/muistio/", spoonKills: 3100, jumpTier: 1,  votes: 0, hoursPlayed: 1150 },
+  { name: "spring", profile: "https://steamcommunity.com/profiles/76561198156521360/", spoonKills: 6000, jumpTier: 3,  votes: 0, hoursPlayed: 4800},
+ // { name: "oldy", profile: "https://steamcommunity.com/id/aliceold/", spoonKills: 2000, jumpTier: 2,  votes: 0, hoursPlayed: 9000 }
 ];
 
   players.forEach(p => {
@@ -147,7 +151,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // new formula
     // P = (15/100 * t/5 + 85/100 * ln(k+1)/15.69) * 100/77.37085179 * 100
     let P = (15/100 * t/5 + 85/100 * Math.log(k+1)/15.69) * 100/77.37085179 * 100;
-    p.skill = Math.round(P);
+    p.skill = P.toFixed(2); // two decimals
   });
 
   players.sort((a,b)=>b.skill - a.skill);
