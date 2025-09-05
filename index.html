@@ -145,7 +145,7 @@ document.addEventListener("DOMContentLoaded", function() {
   players.forEach(p => {
     const t = p.jumpTier;
     // cap kills at 30k for formula
-    const cappedKills = Math.min(p.spoonKills, 30000);
+    const cappedKills = Math.min(p.spoonKills, 100000);
     const k = cappedKills;
 
     // new formula
@@ -182,3 +182,4 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 </body>
 </html>
+
