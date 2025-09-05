@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded", function() {
   { name: "zin", profile: "https://steamcommunity.com/profiles/76561199276635228/", spoonKills: 8300, jumpTier: 4, votes: 0, hoursPlayed: 1000  },
   { name: "KRAACK", profile: "https://steamcommunity.com/profiles/76561198093232307", spoonKills: 29000, jumpTier: 4,  votes: 0, hoursPlayed: 0 },
   { name: "+100 style points", profile: "https://steamcommunity.com/profiles/76561199089054494/", spoonKills: 150, jumpTier: 1, votes: 0, hoursPlayed: 3200  },
-  { name: "BbICTPEJL", profile: "https://steamcommunity.com/id/donttachme/", spoonKills: 10000, jumpTier: 4, votes: 3, hoursPlayed: 2900  },
+  { name: "BbICTPEJL", profile: "https://steamcommunity.com/id/donttachme/", spoonKills: 10000, jumpTier: 4, votes: 0, hoursPlayed: 2900  },
   { name: "V1lka", profile: "https://steamcommunity.com/profiles/76561198905349981/", spoonKills: 3000, jumpTier: 3,  votes: 0, hoursPlayed: 1200  },
   { name: "Dombe", profile: "https://steamcommunity.com/profiles/76561198289424045/", spoonKills: 3500, jumpTier: 3,  votes: 0, hoursPlayed: 2700  }
 ];
@@ -158,7 +158,7 @@ document.addEventListener("DOMContentLoaded", function() {
       <h2>${index+1}. ${p.name}</h2>
       <div class="info"> Spoon Kills: ${p.spoonKills}</div>
       <div class="info"> Jump Map Tier: ${p.jumpTier}</div>
-      <div class="info"> Community Votes: ${p.votes}</div>
+      <div class="info"> Community Votes: ${p.votes > p.votes > 0 ? p.votes : "no data"}</div>
       <div class="info"> Hours Played: ${p.hoursPlayed > 0 ? p.hoursPlayed : "no data"}</div>
       <div class="info"> Overall Score:</div>
       <div class="progress"><div class="progress-bar" style="width:${p.skill}%"></div></div>
@@ -172,6 +172,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 </body>
 </html>
+
 
 
 
