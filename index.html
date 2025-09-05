@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>trolldier ranking</title>
+<title>Trolldier Rankings</title>
 <style>
   body { 
-    background-image: url("hi.jpg"); 
+    background-image: url("images.jpg"); 
     color: #e5e5e5; 
     font-family: 'Arial', sans-serif; 
     margin:0; 
@@ -77,12 +77,12 @@
   }
 
   a { 
-  color:#60a5fa;
-  text-decoration: underline;
+    color:#60a5fa;
+    text-decoration: underline;
   }
 
   a:hover {
-  color:#93c5fd;
+    color:#93c5fd;
   }
 
   .textbox {
@@ -101,49 +101,50 @@
 </style>
 </head>
 <body>
-<h1>Trolldier/soldier Rankings</h1>
+https://red556wind.github.io/
+<h1>Trolldier Rankings</h1>
 
 <div class="textbox">
-  <p>This website is just for fun dont take anything seriously!!1</p>
+  <p>This website is just for fun dont take anything seriously.</p>
   <p>
-    <a href="https://github.com/red556wind/red556wind.github.io/tree/main">more info here (github)</a>.
+    <a href="https://github.com/red556wind/red556wind.github.io/tree/main">view the source code on GitHub</a>.
   </p>
   <p>
     If you want your profile added fill out this 
-    <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=SbprGzVvgk2fykgn1BfNPvYhhn1aw5NMuCL4K5WlCShUMlRQTjcyOUNQTDgwSUVNNDFMRzRGUkVEVC4u">form</a>.
+    <a href="https://forms.cloud.microsoft.com/Pages/ResponsePage.aspx?id=SbprGzVvgk2fykgn1BfNPvYhhn1aw5NMuCL4K5WlCShUMlRQTjcyOUNQTDgwSUVNNDFMRzRGUkVEVC4u">form</a>.
+  </p>
+  <p>
+    Your score is calculated based on your jump map tier and amount of spoon kills, you can view the formula on GitHub.
   </p>
 </div>
-
-</body>
-</html>
-
-
-
-
 
 <div class="list" id="playerList"></div>
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
  const players = [
-  { name: "math enjoyer", profile: "https://steamcommunity.com/id/noninvertible/", spoonKills: 16000, jumpTier: 5, votes: 0, hoursPlayed: 3900},
+  { name: "math enjoyer", profile: "https://steamcommunity.com/id/noninvertible/", spoonKills: 16000, jumpTier: 5, votes: 1, hoursPlayed: 3900},
   { name: "possum", profile: "https://steamcommunity.com/id/lockedpossum/", spoonKills: 12000, jumpTier: 3, votes: 0, hoursPlayed: 2500 },
   { name: "just a gamer", profile: "https://steamcommunity.com/profiles/76561199520681649/", spoonKills: 2000, jumpTier: 3, votes: 0, hoursPlayed: 1200 },
   { name: "Habibi", profile: "https://steamcommunity.com/id/30925716136956716/", spoonKills: 4000, jumpTier: 4, votes: 0, hoursPlayed: 1800 },
   { name: "zin", profile: "https://steamcommunity.com/profiles/76561199276635228/", spoonKills: 8300, jumpTier: 4, votes: 0, hoursPlayed: 1000  },
-  { name: "KRAACK", profile: "https://steamcommunity.com/profiles/76561198093232307", spoonKills: 29000, jumpTier: 4,  votes: 0, hoursPlayed: 0 },
-  { name: "+100 style points", profile: "https://steamcommunity.com/profiles/76561199089054494/", spoonKills: 150, jumpTier: 1, votes: 0, hoursPlayed: 3200  },
-  { name: "BbICTPEJL", profile: "https://steamcommunity.com/id/donttachme/", spoonKills: 10000, jumpTier: 4, votes: 0, hoursPlayed: 2900  },
+  { name: "KRAACK", profile: "https://steamcommunity.com/profiles/76561198093232307", spoonKills: 29000, jumpTier: 4,  votes: 1, hoursPlayed: 0 },
+  { name: "+100 style points", profile: "https://steamcommunity.com/profiles/76561199089054494/", spoonKills: 150, jumpTier: 1, votes: 1, hoursPlayed: 3200  },
+  { name: "BbICTPEJL", profile: "https://steamcommunity.com/id/donttachme/", spoonKills: 10000, jumpTier: 4, votes: 3, hoursPlayed: 2900  },
   { name: "V1lka", profile: "https://steamcommunity.com/profiles/76561198905349981/", spoonKills: 3000, jumpTier: 3,  votes: 0, hoursPlayed: 1200  },
-  { name: "Dombe", profile: "https://steamcommunity.com/profiles/76561198289424045/", spoonKills: 3500, jumpTier: 3,  votes: 0, hoursPlayed: 2700  }
+  { name: "Dombe", profile: "https://steamcommunity.com/profiles/76561198289424045/", spoonKills: 3500, jumpTier: 3,  votes: 0, hoursPlayed: 2700  },
+  { name: "voldemar", profile: "https://steamcommunity.com/profiles/76561199118642412", spoonKills: 0, jumpTier: 0,  votes: 0, hoursPlayed: 0  },
+  { name: "УФ АРТЁМ", profile: "https://steamcommunity.com/profiles/76561199118568588/", spoonKills: 55000, jumpTier: 4,  votes: 2, hoursPlayed: 3500  }
 ];
 
   players.forEach(p => {
     const t = p.jumpTier;
-    const k = p.spoonKills;
-
-    p.skill = ((0.4 * t / 5) + (0.6 * k / 30000)) * 100;
-    p.skill = Math.round(p.skill);
+    // cap kills at 30k for formula
+    const cappedKills = Math.min(p.spoonKills, 30000);
+    
+    // formula using capped kills
+    p.skill = ((0.4 * t / 5) + (0.6 * cappedKills / 30000)) * 100;
+    p.skill = Math.round(p.skill);  
   });
 
   players.sort((a,b)=>b.skill - a.skill);
@@ -156,10 +157,13 @@ document.addEventListener("DOMContentLoaded", function() {
     cardLink.className = 'card';
     cardLink.innerHTML = `
       <h2>${index+1}. ${p.name}</h2>
-      <div class="info"> Spoon Kills: ${p.spoonKills}</div>
-      <div class="info"> Jump Map Tier: ${p.jumpTier}</div>
-      <div class="info"> Community Votes: ${p.votes > p.votes > 0 ? p.votes : "no data"}</div>
-      <div class="info"> Hours Played: ${p.hoursPlayed > 0 ? p.hoursPlayed : "no data"}</div>
+      <div class="info">
+        Spoon Kills: ${p.spoonKills} 
+        ${p.spoonKills > 30000 ? '<span style="color:#a855f7; font-weight:bold;"></span>' : ''}
+      </div>
+      <div class="info"> Jump Map Tier: ${p.jumpTier > 0 ? p.jumpTier : "No data"}</div>
+      <div class="info"> Community Votes: ${p.votes > 0 ? p.votes : "No data"}</div>
+      <div class="info"> Hours Played: ${p.hoursPlayed > 0 ? p.hoursPlayed : "No data"}</div>
       <div class="info"> Overall Score:</div>
       <div class="progress"><div class="progress-bar" style="width:${p.skill}%"></div></div>
       <div class="skill-text">${p.skill}/100</div>
@@ -169,12 +173,5 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 
-
 </body>
 </html>
-
-
-
-
-
-
