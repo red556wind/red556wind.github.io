@@ -105,7 +105,36 @@
     line-height: 1.6;
     text-align: center;
     box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    
   }
+
+    #totalSpoonKills {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid #444;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  color: #e5e5e5;
+  z-index: 999;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+#totalHoursPlayed {
+  position: fixed;
+  top: 60px; /* 40px below the first box */
+  right: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid #444;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  color: #e5e5e5;
+  z-index: 999;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
 </style>
 </head>
 <body>
@@ -124,6 +153,8 @@
     Your score is calculated based on your jump map tier and amount of spoon kills, you can view the formula on GitHub.
   </p>
 </div>
+<div id="totalSpoonKills">Total Spoon Kills: 0</div>
+<div id="totalHoursPlayed">Total Hours Played: 0</div>
 
 <div class="list" id="playerList"></div>
 
@@ -149,6 +180,13 @@ document.addEventListener("DOMContentLoaded", function() {
   { name: "spring", profile: "https://steamcommunity.com/profiles/76561198156521360/", spoonKills: 6000, jumpTier: 3,  votes: 0, hoursPlayed: 4800},
  // { name: "oldy", profile: "https://steamcommunity.com/id/aliceold/", spoonKills: 2000, jumpTier: 2,  votes: 0, hoursPlayed: 9000 }
 ];
+const totalKills = players.reduce((sum, p) => sum + p.spoonKills, 0);
+document.getElementById("totalSpoonKills").textContent = `Total Spoon Kills: ${totalKills.toLocaleString()}`;
+  
+const totalHours = players.reduce((sum, p) => sum + p.hoursPlayed, 0);
+document.getElementById("totalHoursPlayed").textContent = `Total Hours Played: ${totalHours.toLocaleString()}`;
+
+
 
   players.forEach(p => {
     const t = p.jumpTier;
@@ -190,5 +228,6 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 </body>
 </html>
+
 
 
