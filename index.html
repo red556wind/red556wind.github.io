@@ -110,12 +110,12 @@
 
     #totalSpoonKills {
   position: fixed;
-  top: 20px;
+  top: 2px;
   right: 20px;
   background: rgba(0, 0, 0, 0.7);
   border: 1px solid #444;
   padding: 12px 20px;
-  border-radius: 8px;
+  border-radius: 100px;
   font-size: 1.1rem;
   color: #e5e5e5;
   z-index: 999;
@@ -123,12 +123,12 @@
 }
 #totalHoursPlayed {
   position: fixed;
-  top: 60px; /* 40px below the first box */
+  top: 60px;
   right: 20px;
   background: rgba(0, 0, 0, 0.7);
   border: 1px solid #444;
-  padding: 17px 22px;
-  border-radius: 8px;
+  padding: 12px 11px;
+  border-radius: 100px;
   font-size: 1.1rem;
   color: #e5e5e5;
   z-index: 999;
@@ -177,8 +177,8 @@ document.addEventListener("DOMContentLoaded", function() {
   { name: "zero", profile: "https://steamcommunity.com/profiles/76561198195303290/", spoonKills: 47000, jumpTier: 4,  votes: 0, hoursPlayed: 2700 },
   { name: "oldy", profile: "https://steamcommunity.com/id/aliceold/", spoonKills: 2000, jumpTier: 2,  votes: 0, hoursPlayed: 9000 },
   { name: "muistio", profile: "https://steamcommunity.com/id/muistio/", spoonKills: 3100, jumpTier: 3,  votes: 0, hoursPlayed: 1150 },
-  { name: "spring", profile: "https://steamcommunity.com/profiles/76561198156521360/", spoonKills: 6000, jumpTier: 3,  votes: 0, hoursPlayed: 4800},
- // { name: "oldy", profile: "https://steamcommunity.com/id/aliceold/", spoonKills: 2000, jumpTier: 2,  votes: 0, hoursPlayed: 9000 }
+  { name: "spring", profile: "https://steamcommunity.com/profiles/76561198156521360/", spoonKills: 6000, jumpTier: 0,  votes: 0, hoursPlayed: 4800},
+  { name: "ColbY'", profile: "https://steamcommunity.com/id/colby58/", spoonKills: 54200, jumpTier: 3,  votes: 1, hoursPlayed: 3230 }
 ];
 const totalKills = players.reduce((sum, p) => sum + p.spoonKills, 0);
 document.getElementById("totalSpoonKills").textContent = `Total Spoon Kills: ${totalKills.toLocaleString()}`;
@@ -228,7 +228,6 @@ document.getElementById("totalHoursPlayed").textContent = `Total Hours Played: $
 </script>
 </body>
 </html>
-
 
 
 
