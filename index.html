@@ -3,209 +3,177 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Trolldier Rankings</title>
+
+<!-- analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-QHDB21ST3Z"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-QHDB21ST3Z');
+  gtag("js", new Date());
+  gtag("config", "G-QHDB21ST3Z");
 </script>
+
 <style>
-  body { 
-    background-image: url("images.jpg"); 
-    color: #e5e5e5; 
-    font-family: 'Arial', sans-serif; 
-    margin:0; 
-    padding:20px; 
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
+  body {
+    margin:0;
+    padding:20px;
+    font-family: Arial, sans-serif;
+    color:#e5e5e5;
+    background:url("images.jpg") no-repeat center center fixed;
+    background-size:cover;
   }
-  h1 { 
-    text-align:center; 
-    margin-bottom: 40px;
-    font-size:2.2rem;
+  h1 {
+    text-align:center;
+    margin: 0 0 35px;
+    font-size:2.1rem;
   }
-  .list { 
-    display: flex; 
-    flex-direction: column; 
-    gap: 18px;
-    max-width: 600px; 
-    margin: 0 auto; 
+  .list {
+    max-width:600px;
+    margin:0 auto;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
   }
-  .card { 
-    background:#1a1a1a; 
-    border:1px solid #2a2a2a; 
-    border-radius:10px; 
-    padding:18px; 
-    box-shadow:0 3px 7px rgba(0,0,0,0.5); 
-    cursor:pointer; 
-    transition: transform 0.15s; 
-    text-decoration:none; 
-    color: inherit; 
-    display:block; 
+  .card {
+    display:block;
+    padding:18px;
+    border-radius:10px;
+    border:1px solid #2a2a2a;
+    background:#1a1a1a;
+    box-shadow:0 3px 6px rgba(0,0,0,0.5);
+    color:inherit;
+    text-decoration:none;
+    transition:.2s;
   }
-  .card:hover { 
-    transform: scale(1.03); 
-  }
-  .card h2 { 
-    color:#60a5fa; 
-    margin-bottom:12px; 
-    font-size:1.4rem; 
-  }
-  .info { 
-    margin:8px 0; 
-    font-size:0.95rem; 
-  }
-  .progress { 
-    background:#2a2a2a; 
-    border-radius:5px; 
-    overflow:hidden; 
-    height:10px; 
-    margin-top:4px; 
-  }
-  .progress-bar { 
-    background:#a855f7; 
-    height:100%; 
-  }
-  .skill-text { 
-    font-size:0.82rem; 
-    color:#aaa; 
-    margin-top:3px; 
-  }
-  a { 
+  .card:hover { transform:scale(1.03); }
+  .card h2 {
+    margin:0 0 10px;
+    font-size:1.3rem;
     color:#60a5fa;
-    text-decoration: underline;
   }
-  a:hover {
-    color:#93c5fd;
-  }
+  .info { font-size:.95rem; margin:6px 0; }
+  .progress { height:10px; background:#2a2a2a; border-radius:5px; overflow:hidden; }
+  .progress-bar { background:#a855f7; height:100%; }
+  .skill-text { font-size:.8rem; margin-top:3px; color:#aaa; }
+  a { color:#60a5fa; }
+  a:hover { color:#93c5fd; }
   .textbox {
-    background: rgba(0, 0, 0, 0.6);
-    border: 1px solid #444;
-    border-radius: 10px;
-    padding: 20px;
-    max-width: 600px;
-    margin: 20px auto;
-    color: #e5e5e5;
-    font-size: 2rem;
-    line-height: 1.6;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    max-width:600px;
+    margin:20px auto;
+    padding:20px;
+    background:rgba(0,0,0,0.6);
+    border:1px solid #444;
+    border-radius:10px;
+    font-size:1.1rem;
+    line-height:1.5;
+    text-align:center;
+    box-shadow:0 4px 10px rgba(0,0,0,0.5);
   }
-
   .textbox-pink {
-  background: rgba(255, 105, 180, 0.6); /* pink with transparency */
-  border: 1px solid #ff69b4;
-  color: #fff;
-}
-
-  #totalSpoonKills {
-    position: fixed;
-    top: 2px;
-    right: 20px;
-    background: rgba(0, 0, 0, 0.7);
-    border: 1px solid #444;
-    padding: 12px 20px;
-    border-radius: 100px;
-    font-size: 1.1rem;
-    color: #e5e5e5;
-    z-index: 999;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    background:rgba(255,105,180,0.6);
+    border:1px solid #ff69b4;
+    color:#fff;
   }
-  #totalHoursPlayed {
-    position: fixed;
-    top: 60px;
-    right: 20px;
-    background: rgba(0, 0, 0, 0.7);
-    border: 1px solid #444;
-    padding: 12px 11px;
-    border-radius: 100px;
-    font-size: 1.1rem;
-    color: #e5e5e5;
-    z-index: 999;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  #totalSpoonKills, #totalHoursPlayed {
+    position:fixed;
+    right:20px;
+    background:rgba(0,0,0,0.7);
+    border:1px solid #444;
+    padding:12px 18px;
+    border-radius:100px;
+    font-size:1rem;
+    color:#e5e5e5;
+    z-index:999;
+    box-shadow:0 3px 8px rgba(0,0,0,0.5);
+  }
+  #totalSpoonKills { top:5px; }
+  #totalHoursPlayed { top:55px; }
+  #searchInput {
+    width:100%;
+    padding:10px;
+    margin:20px auto;
+    font-size:15px;
+    border:2px solid #ccc;
+    border-radius:8px;
+    display:block;
+    max-width:600px;
   }
 </style>
 </head>
 <body>
+
 <h1>Trolldier Rankings</h1>
 
 <div class="textbox">
-  <p>This website is just for fun dont take anything seriously.</p>
-  <p>
-    <a href="https://github.com/red556wind/red556wind.github.io/tree/main">view the source code on GitHub</a>.
-  </p>
-  <p>
-    If you want your profile added fill out this 
-    <a href="https://forms.cloud.microsoft.com/Pages/ResponsePage.aspx?id=SbprGzVvgk2fykgn1BfNPvYhhn1aw5NMuCL4K5WlCShUMlRQTjcyOUNQTDgwSUVNNDFMRzRGUkVEVC4u">form</a>.
-  </p>
-  <p>
-    Your score is calculated based on your jump map tier and amount of spoon kills, you can view the formula on GitHub.
-  </p>
+  <p>This site is just for fun — don’t take it too seriously.</p>
+  <p><a href="https://github.com/red556wind/red556wind.github.io/tree/main">See the source on GitHub</a></p>
+  <p>Want your profile on here? Fill out <a href="https://forms.cloud.microsoft.com/Pages/ResponsePage.aspx?id=SbprGzVvgk2fykgn1BfNPvYhhn1aw5NMuCL4K5WlCShUMlRQTjcyOUNQTDgwSUVNNDFMRzRGUkVEVC4u">this form</a>.</p>
+  <p>Scores are based on jump map tier + spoon kills. Formula’s up on GitHub.</p>
 </div>
+
 <div id="totalSpoonKills">Total Spoon Kills: 0</div>
 <div id="totalHoursPlayed">Total Hours Played: 0</div>
+
+<input type="text" id="searchInput" placeholder="Search players...">
 
 <div class="list" id="playerList"></div>
 
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-  fetch('players_updated.json')
-    .then(response => {
-      if (!response.ok) throw new Error('Failed to load player data');
-      return response.json();
-    })
-    .then(players => {
-      // Same processing as before
-      players.forEach(p => {
-        const t = p.jumpTier;
-        const cappedKills = Math.min(p.spoonKills, 100000);
-        const k = cappedKills;
-        let P = (15/100 * t/5 + 85/100 * Math.log(k+1)/15.69) * 100/77.37085179 * 100;
-        p.skill = P.toFixed(2);
+document.addEventListener("DOMContentLoaded", () => {
+  fetch("players_updated.json")
+    .then(res => res.json())
+    .then(data => {
+      // quick calc for score
+      data.forEach(p => {
+        let kills = Math.min(p.spoonKills, 100000);
+        let score = (0.15 * (p.jumpTier||0)/5 + 0.85 * Math.log(kills+1)/15.69) * 100/77.37085179 * 100;
+        p.skill = score.toFixed(2);
       });
 
-      players.sort((a,b) => b.skill - a.skill);
+      // sort best to worst
+      data.sort((a,b) => b.skill - a.skill);
 
-      const list = document.getElementById('playerList');
+      const container = document.getElementById("playerList");
+      data.forEach((p,i) => {
+        let card = document.createElement("a");
+        card.href = p.profile;
+        card.target="_blank";
+        card.className="card";
+        card.setAttribute("data-name", p.name.toLowerCase());
 
-      players.forEach((p, index) => {
-        const cardLink = document.createElement('a');
-        cardLink.href = p.profile;
-        cardLink.target = "_blank";
-        cardLink.className = 'card';
-cardLink.innerHTML = `
-  <h2>${index + 1}. ${p.name}</h2>
-        <div class="info">Spoon Kills: ${p.spoonKills}</div>
-        <div class="info">Jump Map Tier: ${p.jumpTier > 0 ? p.jumpTier : "No data"}</div>
-        <div class="info">Community Votes: ${p.votes > 0 ? p.votes : "No data"}</div>
-        <div class="info">Hours Played: ${p.hoursPlayed > 0 ? p.hoursPlayed : "No data"}</div>
-        <div class="info">Overall Score:</div>
-        <div class="progress"><div class="progress-bar" style="width:${p.skill}%"></div></div>
-        <div class="skill-text">${p.skill}/100</div>
-      `;
-      if (p.name.toLowerCase() === "red556wind") {
-          cardLink.classList.add("textbox-pink");
-}
-
-        list.appendChild(cardLink);
+        card.innerHTML = `
+          <h2>${i+1}. ${p.name}</h2>
+          <div class="info">Spoon Kills: ${p.spoonKills}</div>
+          <div class="info">Jump Tier: ${p.jumpTier>0?p.jumpTier:"No data"}</div>
+          <div class="info">Community Votes: ${p.votes||"No data"}</div>
+          <div class="info">Hours Played: ${p.hoursPlayed||"No data"}</div>
+          <div class="info">Overall Score:</div>
+          <div class="progress"><div class="progress-bar" style="width:${p.skill}%"></div></div>
+          <div class="skill-text">${p.skill}/100</div>
+        `;
+        if (p.name.toLowerCase()==="red556wind") card.classList.add("textbox-pink");
+        container.appendChild(card);
       });
 
-      // Update totals
-      const totalKills = players.reduce((sum, p) => sum + p.spoonKills, 0);
-      document.getElementById("totalSpoonKills").textContent = `Total Spoon Kills: ${totalKills.toLocaleString()}`;
+      // totals
+      let totalKills = data.reduce((sum,p)=>sum+p.spoonKills,0);
+      let totalHours = data.reduce((sum,p)=>sum+p.hoursPlayed,0);
+      document.getElementById("totalSpoonKills").textContent = "Total Spoon Kills: " + totalKills.toLocaleString();
+      document.getElementById("totalHoursPlayed").textContent = "Total Hours Played: " + totalHours.toLocaleString();
 
-      const totalHours = players.reduce((sum, p) => sum + p.hoursPlayed, 0);
-      document.getElementById("totalHoursPlayed").textContent = `Total Hours Played: ${totalHours.toLocaleString()}`;
+      // search filter
+      document.getElementById("searchInput").addEventListener("input", e=>{
+        let val = e.target.value.toLowerCase();
+        document.querySelectorAll(".card").forEach(c=>{
+          c.style.display = c.getAttribute("data-name").includes(val) ? "block" : "none";
+        });
+      });
     })
-    .catch(error => {
-      console.error('Error loading player data:', error);
-      const list = document.getElementById('playerList');
-      list.innerHTML = '<p style="color: red;">Failed to load player data.</p>';
+    .catch(err => {
+      console.error("Error:", err);
+      document.getElementById("playerList").innerHTML = "<p style='color:red;'>Couldn’t load player data.</p>";
     });
 });
-
 </script>
 
 </body>
