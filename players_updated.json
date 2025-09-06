@@ -131,7 +131,7 @@
     "name": "spring",
     "profile": "https://steamcommunity.com/profiles/76561198156521360/",
     "spoonKills": 6000,
-    "jumpTier": 0,
+    "jumpTier": 3,
     "votes": 0,
     "hoursPlayed": 4800
   },
@@ -160,3 +160,4 @@
     "hoursPlayed": 5300
   }
 ]
+
