@@ -3,12 +3,11 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Trolldier Rankings</title>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QHDB21ST3Z"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QHDB21ST3Z"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-QHDB21ST3Z');
 </script>
 <style>
@@ -22,13 +21,11 @@
     background-size: cover;
     background-attachment: fixed;
   }
-
   h1 { 
     text-align:center; 
-    margin-bottom: 40px; 
+    margin-bottom: 40px;
     font-size:2.2rem;
   }
-
   .list { 
     display: flex; 
     flex-direction: column; 
@@ -36,7 +33,6 @@
     max-width: 600px; 
     margin: 0 auto; 
   }
-
   .card { 
     background:#1a1a1a; 
     border:1px solid #2a2a2a; 
@@ -49,22 +45,18 @@
     color: inherit; 
     display:block; 
   }
-
   .card:hover { 
     transform: scale(1.03); 
   }
-
   .card h2 { 
     color:#60a5fa; 
     margin-bottom:12px; 
     font-size:1.4rem; 
   }
-
   .info { 
     margin:8px 0; 
     font-size:0.95rem; 
   }
-
   .progress { 
     background:#2a2a2a; 
     border-radius:5px; 
@@ -72,27 +64,22 @@
     height:10px; 
     margin-top:4px; 
   }
-
   .progress-bar { 
     background:#a855f7; 
     height:100%; 
   }
-
   .skill-text { 
     font-size:0.82rem; 
     color:#aaa; 
     margin-top:3px; 
   }
-
   a { 
     color:#60a5fa;
     text-decoration: underline;
   }
-
   a:hover {
     color:#93c5fd;
   }
-
   .textbox {
     background: rgba(0, 0, 0, 0.6);
     border: 1px solid #444;
@@ -105,36 +92,33 @@
     line-height: 1.6;
     text-align: center;
     box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-    
   }
-
-    #totalSpoonKills {
-  position: fixed;
-  top: 2px;
-  right: 20px;
-  background: rgba(0, 0, 0, 0.7);
-  border: 1px solid #444;
-  padding: 12px 20px;
-  border-radius: 100px;
-  font-size: 1.1rem;
-  color: #e5e5e5;
-  z-index: 999;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-}
-#totalHoursPlayed {
-  position: fixed;
-  top: 60px;
-  right: 20px;
-  background: rgba(0, 0, 0, 0.7);
-  border: 1px solid #444;
-  padding: 12px 11px;
-  border-radius: 100px;
-  font-size: 1.1rem;
-  color: #e5e5e5;
-  z-index: 999;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-}
-
+  #totalSpoonKills {
+    position: fixed;
+    top: 2px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid #444;
+    padding: 12px 20px;
+    border-radius: 100px;
+    font-size: 1.1rem;
+    color: #e5e5e5;
+    z-index: 999;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  }
+  #totalHoursPlayed {
+    position: fixed;
+    top: 60px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid #444;
+    padding: 12px 11px;
+    border-radius: 100px;
+    font-size: 1.1rem;
+    color: #e5e5e5;
+    z-index: 999;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  }
 </style>
 </head>
 <body>
@@ -160,75 +144,58 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
- const players = [
-  { name: "math enjoyer", profile: "https://steamcommunity.com/id/noninvertible/", spoonKills: 16000, jumpTier: 5, votes: 1, hoursPlayed: 3900},
-  { name: "possum", profile: "https://steamcommunity.com/id/lockedpossum/", spoonKills: 12000, jumpTier: 3, votes: 0, hoursPlayed: 2500 },
-  { name: "just a gamer", profile: "https://steamcommunity.com/profiles/76561199520681649/", spoonKills: 2000, jumpTier: 3, votes: 0, hoursPlayed: 1200 },
-  { name: "Habibi", profile: "https://steamcommunity.com/id/30925716136956716/", spoonKills: 4000, jumpTier: 4, votes: 0, hoursPlayed: 1800 },
-  { name: "zin", profile: "https://steamcommunity.com/profiles/76561199276635228/", spoonKills: 8300, jumpTier: 4, votes: 0, hoursPlayed: 1000  },
-  { name: "KRAACK", profile: "https://steamcommunity.com/profiles/76561198093232307", spoonKills: 29000, jumpTier: 4,  votes: 1, hoursPlayed: 0 },
-  { name: "+100 style points", profile: "https://steamcommunity.com/profiles/76561199089054494/", spoonKills: 150, jumpTier: 1, votes: 1, hoursPlayed: 3200  },
-  { name: "BbICTPEJL", profile: "https://steamcommunity.com/id/donttachme/", spoonKills: 10000, jumpTier: 4, votes: 3, hoursPlayed: 2900  },
-  { name: "V1lka", profile: "https://steamcommunity.com/profiles/76561198905349981/", spoonKills: 3000, jumpTier: 3,  votes: 0, hoursPlayed: 1200  },
-  { name: "Dombe", profile: "https://steamcommunity.com/profiles/76561198289424045/", spoonKills: 3500, jumpTier: 3,  votes: 0, hoursPlayed: 2700  },
-  { name: "v0ldemar", profile: "https://steamcommunity.com/profiles/76561199118642412", spoonKills: 10000, jumpTier: 3,  votes: 0, hoursPlayed: 1150 },
-  { name: "УФ АРТЁМ", profile: "https://steamcommunity.com/profiles/76561199118568588/", spoonKills: 55000, jumpTier: 4,  votes: 2, hoursPlayed: 3500  },
-  { name: "shoveller gaming", profile: "https://steamcommunity.com/profiles/76561199240959332/", spoonKills: 7000, jumpTier: 3,  votes: 0, hoursPlayed: 2150 },
-  { name: "zero", profile: "https://steamcommunity.com/profiles/76561198195303290/", spoonKills: 47000, jumpTier: 4,  votes: 0, hoursPlayed: 2700 },
-  { name: "oldy", profile: "https://steamcommunity.com/id/aliceold/", spoonKills: 2000, jumpTier: 2,  votes: 0, hoursPlayed: 9000 },
-  { name: "muistio", profile: "https://steamcommunity.com/id/muistio/", spoonKills: 3100, jumpTier: 3,  votes: 0, hoursPlayed: 1150 },
-  { name: "spring", profile: "https://steamcommunity.com/profiles/76561198156521360/", spoonKills: 6000, jumpTier: 3,  votes: 0, hoursPlayed: 4800},
-  { name: "ColbY'", profile: "https://steamcommunity.com/id/colby58/", spoonKills: 54200, jumpTier: 3,  votes: 1, hoursPlayed: 3230 }
-];
-const totalKills = players.reduce((sum, p) => sum + p.spoonKills, 0);
-document.getElementById("totalSpoonKills").textContent = `Total Spoon Kills: ${totalKills.toLocaleString()}`;
-  
-const totalHours = players.reduce((sum, p) => sum + p.hoursPlayed, 0);
-document.getElementById("totalHoursPlayed").textContent = `Total Hours Played: ${totalHours.toLocaleString()}`;
+  fetch('players_updated.json')
+    .then(response => {
+      if (!response.ok) throw new Error('Failed to load player data');
+      return response.json();
+    })
+    .then(players => {
+      // Same processing as before
+      players.forEach(p => {
+        const t = p.jumpTier;
+        const cappedKills = Math.min(p.spoonKills, 100000);
+        const k = cappedKills;
+        let P = (15/100 * t/5 + 85/100 * Math.log(k+1)/15.69) * 100/77.37085179 * 100;
+        p.skill = P.toFixed(2);
+      });
 
+      players.sort((a,b) => b.skill - a.skill);
 
+      const list = document.getElementById('playerList');
 
-  players.forEach(p => {
-    const t = p.jumpTier;
-    // cap kills at 30k for formula
-    const cappedKills = Math.min(p.spoonKills, 100000);
-    const k = cappedKills;
+      players.forEach((p, index) => {
+        const cardLink = document.createElement('a');
+        cardLink.href = p.profile;
+        cardLink.target = "_blank";
+        cardLink.className = 'card';
+        cardLink.innerHTML = `
+          <h2>${index + 1}. ${p.name}</h2>
+          <div class="info">Spoon Kills: ${p.spoonKills}</div>
+          <div class="info">Jump Map Tier: ${p.jumpTier > 0 ? p.jumpTier : "No data"}</div>
+          <div class="info">Community Votes: ${p.votes > 0 ? p.votes : "No data"}</div>
+          <div class="info">Hours Played: ${p.hoursPlayed > 0 ? p.hoursPlayed : "No data"}</div>
+          <div class="info">Overall Score:</div>
+          <div class="progress"><div class="progress-bar" style="width:${p.skill}%"></div></div>
+          <div class="skill-text">${p.skill}/100</div>
+        `;
+        list.appendChild(cardLink);
+      });
 
-    // new formula
-    // P = (15/100 * t/5 + 85/100 * ln(k+1)/15.69) * 100/77.37085179 * 100
-    let P = (15/100 * t/5 + 85/100 * Math.log(k+1)/15.69) * 100/77.37085179 * 100;
-    p.skill = P.toFixed(2); // two decimals
-  });
+      // Update totals
+      const totalKills = players.reduce((sum, p) => sum + p.spoonKills, 0);
+      document.getElementById("totalSpoonKills").textContent = `Total Spoon Kills: ${totalKills.toLocaleString()}`;
 
-  players.sort((a,b)=>b.skill - a.skill);
-
-  const list = document.getElementById('playerList');
-  players.forEach((p, index)=>{
-    const cardLink = document.createElement('a');
-    cardLink.href = p.profile;
-    cardLink.target = "_blank";
-    cardLink.className = 'card';
-    cardLink.innerHTML = `
-      <h2>${index+1}. ${p.name}</h2>
-      <div class="info">
-        Spoon Kills: ${p.spoonKills} 
-        ${p.spoonKills > 30000 ? '<span style="color:#a855f7; font-weight:bold;"></span>' : ''}
-      </div>
-      <div class="info"> Jump Map Tier: ${p.jumpTier > 0 ? p.jumpTier : "No data"}</div>
-      <div class="info"> Community Votes: ${p.votes > 0 ? p.votes : "No data"}</div>
-      <div class="info"> Hours Played: ${p.hoursPlayed > 0 ? p.hoursPlayed : "No data"}</div>
-      <div class="info"> Overall Score:</div>
-      <div class="progress"><div class="progress-bar" style="width:${p.skill}%"></div></div>
-      <div class="skill-text">${p.skill}/100</div>
-    `;
-    list.appendChild(cardLink);
-  });
+      const totalHours = players.reduce((sum, p) => sum + p.hoursPlayed, 0);
+      document.getElementById("totalHoursPlayed").textContent = `Total Hours Played: ${totalHours.toLocaleString()}`;
+    })
+    .catch(error => {
+      console.error('Error loading player data:', error);
+      const list = document.getElementById('playerList');
+      list.innerHTML = '<p style="color: red;">Failed to load player data.</p>';
+    });
 });
 
 </script>
+
 </body>
 </html>
-
-
-
-
