@@ -82,10 +82,10 @@
   {
     "name": "baldemar",
     "profile": "https://steamcommunity.com/profiles/76561199118642412",
-    "spoonKills": 69,
-    "jumpTier": 0,
+    "spoonKills": 3000,
+    "jumpTier": 2,
     "votes": 0,
-    "hoursPlayed": 0
+    "hoursPlayed": 1124
   },
   {
     "name": "УФ АРТЁМ",
@@ -143,4 +143,5 @@
     "votes": 1,
     "hoursPlayed": 3320
   }
+
 ]
