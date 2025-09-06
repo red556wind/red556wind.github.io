@@ -93,6 +93,13 @@
     text-align: center;
     box-shadow: 0 4px 10px rgba(0,0,0,0.5);
   }
+
+  .textbox-pink {
+  background: rgba(255, 105, 180, 0.6); /* pink with transparency */
+  border: 1px solid #ff69b4;
+  color: #fff;
+}
+
   #totalSpoonKills {
     position: fixed;
     top: 2px;
@@ -168,16 +175,20 @@ document.addEventListener("DOMContentLoaded", function() {
         cardLink.href = p.profile;
         cardLink.target = "_blank";
         cardLink.className = 'card';
-        cardLink.innerHTML = `
-          <h2>${index + 1}. ${p.name}</h2>
-          <div class="info">Spoon Kills: ${p.spoonKills}</div>
-          <div class="info">Jump Map Tier: ${p.jumpTier > 0 ? p.jumpTier : "No data"}</div>
-          <div class="info">Community Votes: ${p.votes > 0 ? p.votes : "No data"}</div>
-          <div class="info">Hours Played: ${p.hoursPlayed > 0 ? p.hoursPlayed : "No data"}</div>
-          <div class="info">Overall Score:</div>
-          <div class="progress"><div class="progress-bar" style="width:${p.skill}%"></div></div>
-          <div class="skill-text">${p.skill}/100</div>
-        `;
+cardLink.innerHTML = `
+  <h2>${index + 1}. ${p.name}</h2>
+        <div class="info">Spoon Kills: ${p.spoonKills}</div>
+        <div class="info">Jump Map Tier: ${p.jumpTier > 0 ? p.jumpTier : "No data"}</div>
+        <div class="info">Community Votes: ${p.votes > 0 ? p.votes : "No data"}</div>
+        <div class="info">Hours Played: ${p.hoursPlayed > 0 ? p.hoursPlayed : "No data"}</div>
+        <div class="info">Overall Score:</div>
+        <div class="progress"><div class="progress-bar" style="width:${p.skill}%"></div></div>
+        <div class="skill-text">${p.skill}/100</div>
+      `;
+      if (p.name.toLowerCase() === "red556wind") {
+          cardLink.classList.add("textbox-pink");
+}
+
         list.appendChild(cardLink);
       });
 
