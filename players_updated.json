@@ -158,6 +158,15 @@
     "jumpTier": 3,
     "votes": 2,
     "hoursPlayed": 5300
+  },
+    {
+    "name": "rx",
+    "profile": "https://steamcommunity.com/id/raxor_/",
+    "spoonKills": 1900,
+    "jumpTier": 2,
+    "votes": 0,
+    "hoursPlayed": 7000
   }
 ]
+
 
