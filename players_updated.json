@@ -44,7 +44,7 @@
     "profile": "https://steamcommunity.com/profiles/76561198093232307",
     "spoonKills": 29104,
     "jumpTier": 4,
-    "votes": 3,
+    "votes": 4,
     "hoursPlayed": 0
   },
   {
@@ -174,8 +174,17 @@
     "jumpTier": 5,
     "votes": 0,
     "hoursPlayed": 6000
+  },
+    {
+    "name": "unknown slayer",
+    "profile": "https://steamcommunity.com/profiles/76561198881261053/",
+    "spoonKills": 1881,
+    "jumpTier": 1,
+    "votes": 0,
+    "hoursPlayed": 650
   }
 ]
+
 
 
 
