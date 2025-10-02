@@ -12,6 +12,51 @@
   gtag("js", new Date());
   gtag("config", "G-QHDB21ST3Z");
 </script>
+  <div class="textbox">
+  <h2>Submit New Data</h2>
+  <form id="submissionForm">
+    <input type="text" id="name" placeholder="Player name" required><br><br>
+    <input type="number" id="spoonKills" placeholder="New Spoon Kills" required><br><br>
+    <input type="number" id="jumpTier" placeholder="Jump Tier (1-10)" required><br><br>
+    <button type="submit">Submit</button>
+  </form>
+</div>
+
+<script>
+document.getElementById("submissionForm").addEventListener("submit", async (e)=>{
+  e.preventDefault();
+
+  const submission = {
+    name: document.getElementById("name").value,
+    spoonKills: parseInt(document.getElementById("spoonKills").value),
+    jumpTier: parseInt(document.getElementById("jumpTier").value),
+    submittedAt: new Date().toISOString()
+  };
+
+  // Create GitHub Issue (with JSON data in body)
+  const url = "https://api.github.com/repos/red556wind/red556wind.github.io/issues";
+  
+  const res = await fetch(url, {
+    method: "POST",
+    headers: {
+      "Accept": "application/vnd.github+json"
+    },
+    body: JSON.stringify({
+      title: `Submission: ${submission.name}`,
+      body: JSON.stringify(submission, null, 2),
+      labels: ["submission"]
+    })
+  });
+
+  if (res.ok) {
+    alert("Submission sent! It will be reviewed soon.");
+  } else {
+    alert("Failed to send submission.");
+    console.error(await res.json());
+  }
+});
+</script>
+
 
 <style>
   body {
@@ -180,6 +225,7 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 </body>
 </html>
+
 
 
 
