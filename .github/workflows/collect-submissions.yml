@@ -1,1 +1,52 @@
+name: Collect Submissions
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  update-submissions:
+    if: contains(github.event.issue.labels.*.name, 'submission')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Extract issue body
+        run: |
+          echo '${{ github.event.issue.body }}' > new_submission.json
+
+      - name: Update submissions.json
+        run: |
+          python - <<'EOF'
+          import json, os
+          sub_file = "submissions.json"
+
+          # Load current submissions
+          if os.path.exists(sub_file):
+              with open(sub_file, "r", encoding="utf-8") as f:
+                  data = json.load(f)
+          else:
+              data = []
+
+          # Load new submission
+          with open("new_submission.json", "r", encoding="utf-8") as f:
+              new_sub = json.load(f)
+
+          data.append(new_sub)
+
+          with open(sub_file, "w", encoding="utf-8") as f:
+              json.dump(data, f, indent=4, ensure_ascii=False)
+          EOF
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "Add new submission"
+          file_pattern: submissions.json
 
