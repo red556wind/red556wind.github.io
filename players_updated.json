@@ -1,192 +1,186 @@
 [
-  {
-    "name": "math enjoyer",
-    "profile": "https://steamcommunity.com/id/noninvertible/",
-    "spoonKills": 16135,
-    "jumpTier": 5,
-    "votes": 1,
-    "hoursPlayed": 3900
-  },
-  {
-    "name": "possum",
-    "profile": "https://steamcommunity.com/id/lockedpossum/",
-    "spoonKills": 12128,
-    "jumpTier": 4,
-    "votes": 0,
-    "hoursPlayed": 1064
-  },
-  {
-    "name": "just a gamer",
-    "profile": "https://steamcommunity.com/profiles/76561199520681649/",
-    "spoonKills": 2122,
-    "jumpTier": 3,
-    "votes": 0,
-    "hoursPlayed": 1200
-  },
-  {
-    "name": "Habibi",
-    "profile": "https://steamcommunity.com/id/30925716136956716/",
-    "spoonKills": 4114,
-    "jumpTier": 4,
-    "votes": 0,
-    "hoursPlayed": 1800
-  },
-  {
-    "name": "zin",
-    "profile": "https://steamcommunity.com/profiles/76561199276635228/",
-    "spoonKills": 8434,
-    "jumpTier": 4,
-    "votes": 0,
-    "hoursPlayed": 1002
-  },
-  {
-    "name": "KRAACK",
-    "profile": "https://steamcommunity.com/profiles/76561198093232307",
-    "spoonKills": 29104,
-    "jumpTier": 4,
-    "votes": 4,
-    "hoursPlayed": 0
-  },
-  {
-    "name": "+100 style points",
-    "profile": "https://steamcommunity.com/profiles/76561199089054494/",
-    "spoonKills": 294,
-    "jumpTier": 1,
-    "votes": 1,
-    "hoursPlayed": 2904
-  },
-  {
-    "name": "BbICTPEJL",
-    "profile": "https://steamcommunity.com/id/donttachme/",
-    "spoonKills": 10100,
-    "jumpTier": 4,
-    "votes": 3,
-    "hoursPlayed": 3218
-  },
-  {
-    "name": "V1lka",
-    "profile": "https://steamcommunity.com/profiles/76561198905349981/",
-    "spoonKills": 3108,
-    "jumpTier": 3,
-    "votes": 0,
-    "hoursPlayed": 510
-  },
-  {
-    "name": "Dombe",
-    "profile": "https://steamcommunity.com/profiles/76561198289424045/",
-    "spoonKills": 3607,
-    "jumpTier": 3,
-    "votes": 0,
-    "hoursPlayed": 2772
-  },
-  {
-    "name": "baldemar",
-    "profile": "https://steamcommunity.com/profiles/76561199118642412",
-    "spoonKills": 3143,
-    "jumpTier": 2,
-    "votes": 0,
-    "hoursPlayed": 1124
-  },
-  {
-    "name": "УФ АРТЁМ",
-    "profile": "https://steamcommunity.com/profiles/76561199118568588/",
-    "spoonKills": 55129,
-    "jumpTier": 4,
-    "votes": 2,
-    "hoursPlayed": 3492
-  },
-  {
-    "name": "shoveller gaming",
-    "profile": "https://steamcommunity.com/profiles/76561199240959332/",
-    "spoonKills": 7134,
-    "jumpTier": 3,
-    "votes": 0,
-    "hoursPlayed": 2119
-  },
-  {
-    "name": "zero",
-    "profile": "https://steamcommunity.com/profiles/76561198195303290/",
-    "spoonKills": 47106,
-    "jumpTier": 4,
-    "votes": 0,
-    "hoursPlayed": 2700
-  },
-  {
-    "name": "oldy",
-    "profile": "https://steamcommunity.com/id/aliceold/",
-    "spoonKills": 2115,
-    "jumpTier": 2,
-    "votes": 0,
-    "hoursPlayed": 9585
-  },
-  {
-    "name": "muistio",
-    "profile": "https://steamcommunity.com/id/muistio/",
-    "spoonKills": 3250,
-    "jumpTier": 3,
-    "votes": 0,
-    "hoursPlayed": 1150
-  },
-  {
-    "name": "spring",
-    "profile": "https://steamcommunity.com/profiles/76561198156521360/",
-    "spoonKills": 6133,
-    "jumpTier": 3,
-    "votes": 0,
-    "hoursPlayed": 4800
-  },
-  {
-    "name": "ColbY'",
-    "profile": "https://steamcommunity.com/id/colby58/",
-    "spoonKills": 54344,
-    "jumpTier": 3,
-    "votes": 1,
-    "hoursPlayed": 3320
-  },
-  {
-    "name": "kimmitoogucci",
-    "profile": "https://steamcommunity.com/profiles/76561198355257378/",
-    "spoonKills": 6219,
-    "jumpTier": 1,
-    "votes": 0,
-    "hoursPlayed": 3847
-  },
-  {
-    "name": "red556wind",
-    "profile": "https://steamcommunity.com/profiles/76561199013362182/",
-    "spoonKills": 190,
-    "jumpTier": 3,
-    "votes": 2,
-    "hoursPlayed": 5286
-  },
-  {
-    "name": "rx",
-    "profile": "https://steamcommunity.com/id/raxor_/",
-    "spoonKills": 2015,
-    "jumpTier": 2,
-    "votes": 0,
-    "hoursPlayed": 7130
-  },
-  {
-    "name": "sarip",
-    "profile": "https://steamcommunity.com/profiles/76561198113330438/",
-    "spoonKills": 58503,
-    "jumpTier": 5,
-    "votes": 0,
-    "hoursPlayed": 6000
-  },
     {
-    "name": "unknown slayer",
-    "profile": "https://steamcommunity.com/profiles/76561198881261053/",
-    "spoonKills": 1881,
-    "jumpTier": 1,
-    "votes": 0,
-    "hoursPlayed": 650
-  }
+        "name": "math enjoyer",
+        "profile": "https://steamcommunity.com/id/noninvertible/",
+        "spoonKills": 16621,
+        "jumpTier": 5,
+        "votes": 1,
+        "hoursPlayed": 3900
+    },
+    {
+        "name": "possum",
+        "profile": "https://steamcommunity.com/id/lockedpossum/",
+        "spoonKills": 12442,
+        "jumpTier": 3,
+        "votes": 0,
+        "hoursPlayed": 1064
+    },
+    {
+        "name": "just a gamer",
+        "profile": "https://steamcommunity.com/profiles/76561199520681649/",
+        "spoonKills": 2432,
+        "jumpTier": 3,
+        "votes": 0,
+        "hoursPlayed": 1200
+    },
+    {
+        "name": "Habibi",
+        "profile": "https://steamcommunity.com/id/30925716136956716/",
+        "spoonKills": 4459,
+        "jumpTier": 4,
+        "votes": 0,
+        "hoursPlayed": 1800
+    },
+    {
+        "name": "zin",
+        "profile": "https://steamcommunity.com/profiles/76561199276635228/",
+        "spoonKills": 8740,
+        "jumpTier": 4,
+        "votes": 0,
+        "hoursPlayed": 1002
+    },
+    {
+        "name": "KRAACK",
+        "profile": "https://steamcommunity.com/profiles/76561198093232307",
+        "spoonKills": 29528,
+        "jumpTier": 4,
+        "votes": 4,
+        "hoursPlayed": 0
+    },
+    {
+        "name": "+100 style points",
+        "profile": "https://steamcommunity.com/profiles/76561199089054494/",
+        "spoonKills": 778,
+        "jumpTier": 1,
+        "votes": 1,
+        "hoursPlayed": 2904
+    },
+    {
+        "name": "BbICTPEJL",
+        "profile": "https://steamcommunity.com/id/donttachme/",
+        "spoonKills": 10509,
+        "jumpTier": 4,
+        "votes": 3,
+        "hoursPlayed": 3218
+    },
+    {
+        "name": "V1lka",
+        "profile": "https://steamcommunity.com/profiles/76561198905349981/",
+        "spoonKills": 3426,
+        "jumpTier": 3,
+        "votes": 0,
+        "hoursPlayed": 510
+    },
+    {
+        "name": "Dombe",
+        "profile": "https://steamcommunity.com/profiles/76561198289424045/",
+        "spoonKills": 4050,
+        "jumpTier": 3,
+        "votes": 0,
+        "hoursPlayed": 2772
+    },
+    {
+        "name": "baldemar",
+        "profile": "https://steamcommunity.com/profiles/76561199118642412",
+        "spoonKills": 3470,
+        "jumpTier": 2,
+        "votes": 0,
+        "hoursPlayed": 1124
+    },
+    {
+        "name": "УФ АРТЁМ",
+        "profile": "https://steamcommunity.com/profiles/76561199118568588/",
+        "spoonKills": 55489,
+        "jumpTier": 4,
+        "votes": 2,
+        "hoursPlayed": 3492
+    },
+    {
+        "name": "shoveller gaming",
+        "profile": "https://steamcommunity.com/profiles/76561199240959332/",
+        "spoonKills": 7451,
+        "jumpTier": 3,
+        "votes": 0,
+        "hoursPlayed": 2119
+    },
+    {
+        "name": "zero",
+        "profile": "https://steamcommunity.com/profiles/76561198195303290/",
+        "spoonKills": 47433,
+        "jumpTier": 4,
+        "votes": 0,
+        "hoursPlayed": 2700
+    },
+    {
+        "name": "oldy",
+        "profile": "https://steamcommunity.com/id/aliceold/",
+        "spoonKills": 2590,
+        "jumpTier": 2,
+        "votes": 0,
+        "hoursPlayed": 9585
+    },
+    {
+        "name": "muistio",
+        "profile": "https://steamcommunity.com/id/muistio/",
+        "spoonKills": 3683,
+        "jumpTier": 3,
+        "votes": 0,
+        "hoursPlayed": 1150
+    },
+    {
+        "name": "spring",
+        "profile": "https://steamcommunity.com/profiles/76561198156521360/",
+        "spoonKills": 6537,
+        "jumpTier": 3,
+        "votes": 0,
+        "hoursPlayed": 4800
+    },
+    {
+        "name": "ColbY'",
+        "profile": "https://steamcommunity.com/id/colby58/",
+        "spoonKills": 54653,
+        "jumpTier": 3,
+        "votes": 1,
+        "hoursPlayed": 3320
+    },
+    {
+        "name": "kimmitoogucci",
+        "profile": "https://steamcommunity.com/profiles/76561198355257378/",
+        "spoonKills": 6545,
+        "jumpTier": 1,
+        "votes": 0,
+        "hoursPlayed": 3847
+    },
+    {
+        "name": "red556wind",
+        "profile": "https://steamcommunity.com/profiles/76561199013362182/",
+        "spoonKills": 521,
+        "jumpTier": 3,
+        "votes": 2,
+        "hoursPlayed": 5286
+    },
+    {
+        "name": "rx",
+        "profile": "https://steamcommunity.com/id/raxor_/",
+        "spoonKills": 2438,
+        "jumpTier": 2,
+        "votes": 0,
+        "hoursPlayed": 7130
+    },
+    {
+        "name": "sarip",
+        "profile": "https://steamcommunity.com/profiles/76561198113330438/",
+        "spoonKills": 58996,
+        "jumpTier": 5,
+        "votes": 0,
+        "hoursPlayed": 6000
+    },
+    {
+        "name": "unknown slayer",
+        "profile": "https://steamcommunity.com/profiles/76561198881261053/",
+        "spoonKills": 2285,
+        "jumpTier": 1,
+        "votes": 0,
+        "hoursPlayed": 650
+    }
 ]
-
-
-
-
-
-
