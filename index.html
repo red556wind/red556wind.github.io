@@ -22,41 +22,6 @@
   </form>
 </div>
 
-<script>
-document.getElementById("submissionForm").addEventListener("submit", async (e)=>{
-  e.preventDefault();
-
-  const submission = {
-    name: document.getElementById("name").value,
-    spoonKills: parseInt(document.getElementById("spoonKills").value),
-    jumpTier: parseInt(document.getElementById("jumpTier").value),
-    submittedAt: new Date().toISOString()
-  };
-
-  // Create GitHub Issue (with JSON data in body)
-  const url = "https://api.github.com/repos/red556wind/red556wind.github.io/issues";
-  
-  const res = await fetch(url, {
-    method: "POST",
-    headers: {
-      "Accept": "application/vnd.github+json"
-    },
-    body: JSON.stringify({
-      title: `Submission: ${submission.name}`,
-      body: JSON.stringify(submission, null, 2),
-      labels: ["submission"]
-    })
-  });
-
-  if (res.ok) {
-    alert("Submission sent! It will be reviewed soon.");
-  } else {
-    alert("Failed to send submission.");
-    console.error(await res.json());
-  }
-});
-</script>
-
 
 <style>
   body {
@@ -225,6 +190,7 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 </body>
 </html>
+
 
 
 
